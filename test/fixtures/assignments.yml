@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_date: 2012-02-28
+  end_date: 2012-02-28
+  pay_level: 1
+
+two:
+  start_date: 2012-02-28
+  end_date: 2012-02-28
+  pay_level: 1
