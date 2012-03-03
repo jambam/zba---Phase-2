@@ -3,22 +3,18 @@ class Store < ActiveRecord::Base
 # create a callback that will strip non-digits of phone before saving to db
   before_save :reformat_phone
 
-
-
 # Relationships
 # -----------------------------
   has_many :assignments
   has_many :employees, :through => :assignments
 
-
-
 #Validations
 # -----------------------------
   #ensures there's data for name and street
-  validates_presence_of :name, :street
+  validates_presence_of :name, :street, :zip
 
-  # phone can have dashes but must be 10 digits
-  validates_format_of :phone, :with => /^(\d{10}|\d{3}[-]\d{3}[-]\d{4})$/, :message => "should be 10 digits (area code needed) and delimited with dashes only"	
+  # phone can have dashes but must be 10 digits 
+  validates_format_of :phone, :with => /^(\d{10}|\d{3}[-]\d{3}[-]\d{4})$/, :message => "should be 10 digits (area code needed) and delimited with dashes only", :allow_blank => true
 
   # if zip included, it must be 5 digits only
   validates_format_of :zip, :with => /^\d{5}$/, :message => "should be five digits long"
@@ -29,8 +25,6 @@ class Store < ActiveRecord::Base
   # store name must be unique in the system
   validates_uniqueness_of :name
 
-
-
   # Scopes
   # -----------------------------
   # list stores in alphabetical order
@@ -38,9 +32,7 @@ class Store < ActiveRecord::Base
   # get all the stores that are active
   scope :active, where('active = ?', true)
   # get all the stores that are inactive
-  scope :active, where('active = ?', false)
-
-
+  scope :inactive, where('active = ?', false)
 
 # Callback code
 # -----------------------------
@@ -51,5 +43,5 @@ class Store < ActiveRecord::Base
       phone.gsub!(/[^0-9]/,"") # strip all non-digits
       self.phone = phone       # reset self.phone to new string
     end
-
+    
 end
