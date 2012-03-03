@@ -1,0 +1,61 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/assignment.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/employee.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/store.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1330751274
+  }
+}

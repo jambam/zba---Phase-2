@@ -14,11 +14,13 @@
 ActiveRecord::Schema.define(:version => 20120228052459) do
 
   create_table "assignments", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "store_id"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "pay_level"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "employees", :force => true do |t|
