@@ -28,6 +28,8 @@ class StoreTest < ActiveSupport::TestCase
   
   should_not allow_value("412.268.3259").for(:phone)
   should_not allow_value("(412) 268-3259").for(:phone)
+  should_not allow_value("(412)-268-3259").for(:phone)
+  should_not allow_value("(412)268-3259").for(:phone)
   should_not allow_value("2683259").for(:phone)
   should_not allow_value("4122683259x224").for(:phone)
   should_not allow_value("800-EAT-FOOD").for(:phone)
@@ -56,7 +58,7 @@ class StoreTest < ActiveSupport::TestCase
   should_not allow_value("CA").for(:state)
 
   # Testing other methods with a context
-  context "Creating three owners" do
+  context "Creating three stores" do
   # Create the objects I want with factories
   setup do 
       @store1 = Factory.create(:store, :name => "store1")
@@ -72,7 +74,7 @@ class StoreTest < ActiveSupport::TestCase
     end
 
   # test the scope 'alphabetical'
-    should "show that there are three stores in in alphabetical order" do
+    should "show that there are three stores in alphabetical order" do
       assert_equal ["store1", "store2", "store3"], Store.alphabetical.map{|x| x.name}
     end
 
@@ -86,6 +88,11 @@ class StoreTest < ActiveSupport::TestCase
     should "show that there is one inactive store" do
       assert_equal 1, Store.inactive.size
       assert_equal ["store2"], Store.inactive.map{|x| x.name}
+    end
+
+    # test the callback is working 'reformat_phone'
+    should "shows that the store's phone number is stripped of non-digits" do
+      assert_equal "4122688211", @store3.phone
     end   
 
   end

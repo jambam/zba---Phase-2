@@ -29,8 +29,10 @@ class Store < ActiveRecord::Base
   # -----------------------------
   # list stores in alphabetical order
   scope :alphabetical, order('name')
+  
   # get all the stores that are active
   scope :active, where('active = ?', true)
+  
   # get all the stores that are inactive
   scope :inactive, where('active = ?', false)
 

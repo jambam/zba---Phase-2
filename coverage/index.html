@@ -23,7 +23,7 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-03T16:37:28-05:00">2012-03-03T16:37:28-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-03-03T23:27:34-05:00">2012-03-03T23:27:34-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -34,15 +34,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.32
+         2.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>26</b> relevant lines. 
-    <span class="green"><b>26</b> lines covered</span> and
+    <b>48</b> relevant lines. 
+    <span class="green"><b>48</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -92,21 +92,21 @@
       <tr>
         <td class="strong"><a href="#b68ae340d45474466182393d532eba6e81c98127" class="src_link" title="app/models/employee.rb">app/models/employee.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>3</td>
-        <td>3</td>
+        <td>70</td>
+        <td>25</td>
+        <td>25</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>7.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#63d79678635cb236e11d8ae59f78e0355a92a2a8" class="src_link" title="app/models/store.rb">app/models/store.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>47</td>
+        <td>49</td>
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>2.6</td>
+        <td>3.1</td>
       </tr>
       
     </tbody>
@@ -169,15 +169,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         3.77
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>3</b> files in total.
-    <b>23</b> relevant lines. 
-    <span class="green"><b>23</b> lines covered</span> and
+    <b>45</b> relevant lines. 
+    <span class="green"><b>45</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -207,21 +207,21 @@
       <tr>
         <td class="strong"><a href="#b68ae340d45474466182393d532eba6e81c98127" class="src_link" title="app/models/employee.rb">app/models/employee.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>3</td>
-        <td>3</td>
+        <td>70</td>
+        <td>25</td>
+        <td>25</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>7.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#63d79678635cb236e11d8ae59f78e0355a92a2a8" class="src_link" title="app/models/store.rb">app/models/store.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>47</td>
+        <td>49</td>
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>2.6</td>
+        <td>3.1</td>
       </tr>
       
     </tbody>
@@ -534,8 +534,8 @@
     <h3>app/models/employee.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>25</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -558,34 +558,406 @@
         <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby"># Relationships</code>
+          <code class="ruby"># create a callback that will strip non-digits of phone before saving to db</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"># -----------------------------</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :assignments</code>
+          <code class="ruby">  before_save :reformat_phone_and_ssn</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :stores, :through =&gt; :assignments</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"># Relationships</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"># -----------------------------</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :assignments</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :stores, :through =&gt; :assignments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">#Validations</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"># -----------------------------</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  # phone can have dashes but must be 10 digits </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_format_of :phone, :with =&gt; /^(\d{10}|\d{3}[-]\d{3}[-]\d{4})$/, :message =&gt; &quot;should be 10 digits (area code needed) and delimited with dashes only&quot;, :allow_blank =&gt; true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  # first_name and last_name must only contain letters</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_format_of :first_name, :last_name, :with =&gt; /^[A-Za-z]*$/, :message =&gt; &quot;should only contain letters&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  # all ssn values are nine digits with optional dashes or spaces between the 3rd-4th digits and the 5th-6th digits</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_format_of :ssn, :with =&gt;  /^\d{3}[- ]?\d{2}[- ]?\d{4}$/, :message =&gt; &quot;should be 9 digits long (with optional dashes or spaces for delimitation)&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  # all employees are at least 18 years old</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_date :date_of_birth, :on_or_before =&gt; 14.years.ago.to_date, :message =&gt; &quot;must be at least 14 years old&quot;, :allow_nil =&gt; false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">  # employee's role must be admin, manager, or employee</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_inclusion_of :role, :in =&gt; %w[admin manager employee], :message =&gt; &quot;must be admin, manager, or employee&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"># Scopes</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"># -----------------------------</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  # list employees in alphabetical order</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :alphabetical, order('last_name, first_name')  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  # get all the employees that are active</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :active, where('active = ?', true)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  # get all the employees that are inactive</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :inactive, where('active = ?', false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  # returns all employees under 18 years old</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :younger_than_18, where(&quot;date_of_birth &gt; ?&quot;, 18.years.ago.to_date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  # returns all employees over 18 years old</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :older_than_18, where(&quot;date_of_birth &lt; ?&quot;, 18.years.ago.to_date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  # returns all employees who have the role &quot;employee&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :regulars, where(&quot;role = ?&quot;, &quot;employee&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">  # returns all employees who have the role &quot;manager&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :managers, where(&quot;role = ?&quot;, &quot;manager&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">  # returns all employees who have the role &quot;admin&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :admins, where(&quot;role = ?&quot;, &quot;admin&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"># Callback code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"># -----------------------------</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  	# Stripping non-digits before saving to db</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def reformat_phone_and_ssn</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="61">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      phone = self.phone.to_s  # change to string in case input as all numbers </code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="62">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      phone.gsub!(/[^0-9]/,&quot;&quot;) # strip all non-digits</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="63">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      self.phone = phone       # reset self.phone to new string</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="65">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      ssn = self.ssn.to_s  # change to string in case input as all numbers </code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="66">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      ssn.gsub!(/[^0-9]/,&quot;&quot;) # strip all non-digits</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="67">
+          <span class="hits">27</span>
+          
+          <code class="ruby">      self.ssn = ssn       # reset self.phone to new string</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">end</code>
@@ -798,94 +1170,106 @@
         <li class="never" data-hits="" data-linenumber="32">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
           <code class="ruby">  # get all the stores that are active</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :active, where('active = ?', true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  # get all the stores that are inactive</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :inactive, where('active = ?', false)</code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # get all the stores that are inactive</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># Callback code</code>
+          <code class="ruby">  scope :inactive, where('active = ?', false)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby"># -----------------------------</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="39">
           
-          <code class="ruby">  private</code>
+          
+          <code class="ruby"># Callback code</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  	# Stripping non-digits before saving to db</code>
+          <code class="ruby"># -----------------------------</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  	# Stripping non-digits before saving to db</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
           <code class="ruby">    def reformat_phone</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="42">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="44">
+          <span class="hits">13</span>
           
           <code class="ruby">      phone = self.phone.to_s  # change to string in case input as all numbers </code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="43">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="45">
+          <span class="hits">13</span>
           
           <code class="ruby">      phone.gsub!(/[^0-9]/,&quot;&quot;) # strip all non-digits</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="44">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="46">
+          <span class="hits">13</span>
           
           <code class="ruby">      self.phone = phone       # reset self.phone to new string</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>

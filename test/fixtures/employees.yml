@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  ssn: MyString
-  date_of_birth: 2012-02-28
-  phone: MyString
-  role: MyString
-  active: false
+# one:
+#   first_name: MyString
+#   last_name: MyString
+#   ssn: MyString
+#   date_of_birth: 2012-02-28
+#   phone: MyString
+#   role: MyString
+#   active: false
 
-two:
-  first_name: MyString
-  last_name: MyString
-  ssn: MyString
-  date_of_birth: 2012-02-28
-  phone: MyString
-  role: MyString
-  active: false
+# two:
+#   first_name: MyString
+#   last_name: MyString
+#   ssn: MyString
+#   date_of_birth: 2012-02-28
+#   phone: MyString
+#   role: MyString
+#   active: false
