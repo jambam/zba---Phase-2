@@ -52,10 +52,10 @@ class AssignmentTest < ActiveSupport::TestCase
       @store2 = Factory.create(:store, :name => "store2")
       @store3 = Factory.create(:store, :name => "store3")
       
+      @assignment4 = Factory.create(:assignment, :store => @store3, :employee => @alex)
       @assignment1 = Factory.create(:assignment, :start_date => 1.week.ago.to_date, :end_date => nil, :store => @store1, :employee => @alex, :pay_level => 2)
       @assignment2 = Factory.create(:assignment, :end_date => Date.current, :store => @store2, :employee => @brandon, :pay_level => 2)
       @assignment3 = Factory.create(:assignment, :end_date => nil, :store => @store1, :employee => @cynthia)
-      @assignment4 = Factory.create(:assignment, :store => @store3, :employee => @alex)
     end
     
     # and provide a teardown method as well
@@ -121,6 +121,14 @@ class AssignmentTest < ActiveSupport::TestCase
     	@darren = Factory.build(:employee, :first_name => "darren", :active => false)	
 		  assignment5 = Factory.build(:assignment, :employee => @darren)
     	assert (not assignment5.valid?)
+    end
+
+    # test the method 'end_previous_assignment'
+    should "update and terminate old assignments upon the creation of a new, current assignment" do
+      assignment5 = Factory.create(:assignment, :start_date => Date.current, :employee => @alex, :store => @store1, :pay_level => 3, :end_date => nil)
+      # Get fresh data from the database
+      assert_equal Date.current, Assignment.find(@assignment1.id).end_date
+      assignment5.destroy
     end
 
   end

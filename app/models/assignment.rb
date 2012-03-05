@@ -1,7 +1,7 @@
 class Assignment < ActiveRecord::Base
 
 # create a callback that will update and terminate any previous assignments
-  # before_create :end_previous_assignment
+  before_create :end_previous_assignment
 
 # Relationships
 # -----------------------------
@@ -78,8 +78,12 @@ class Assignment < ActiveRecord::Base
   # Callback code
   # -----------------------------
     # Update and terminate any previous assignments before  before saving to db
-    # def end_previous_assignment
-    #   self.employee.current_assignment.update_attributes(:end_date)
-    # end
+    def end_previous_assignment
+      if self.employee.current_assignment != nil then 
+        current = self.employee.current_assignment
+        current.end_date = self.start_date
+        current.save!
+      end
+    end
 
 end
