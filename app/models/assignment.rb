@@ -1,5 +1,8 @@
 class Assignment < ActiveRecord::Base
 
+# create a callback that will update and terminate any previous assignments
+  # before_create :end_previous_assignment
+
 # Relationships
 # -----------------------------
   belongs_to :store
@@ -10,11 +13,11 @@ class Assignment < ActiveRecord::Base
   #ensures there's data for store_id and employee_id
   validates_presence_of :store_id, :employee_id  
 
-  # start_date can't be in the future nor can it be after end_date
-  validates_date :start_date, :on_or_before => lambda { Date.current }, :on_or_before => :end_date
+  # # start_date can't be in the future nor can it be after end_date
+  # validates_date :start_date, :on_or_before => lambda {|a| Date.current}, :on_or_before => :end_date #, :message => "hello there mate"
 
-  # end_date can't be in the future and can't be after end_date
-  validates_date :end_date, :on_or_before => lambda { Date.current }, :after => :start_date, :allow_nil => true
+  # # end_date can't be in the future and can't be after end_date
+  # validates_date :end_date, :on_or_before => lambda {|a| Date.current}, :after => :start_date, :allow_nil => true
 
   # pay_level is an int and between 1 and 6
   validates_numericality_of :pay_level, :only_integer => true, :greater_than => 0, :less_than => 7
@@ -59,8 +62,9 @@ class Assignment < ActiveRecord::Base
       return false   # not necessary, but I like to add it ...
     end
     return true  # also not strictly necessary ...
-
-    def employee_in_assignments
+  end
+    
+  def employee_in_assignments
     # get an array of the id's of all active employees
     active_employee_ids = Employee.active.all.map{|a| a.id}
     # add error unless the employee_id in question is in active_employee_ids
@@ -69,7 +73,13 @@ class Assignment < ActiveRecord::Base
       return false   # not necessary, but I like to add it ...
     end
     return true  # also not strictly necessary ...
-  
   end
+
+  # Callback code
+  # -----------------------------
+    # Update and terminate any previous assignments before  before saving to db
+    # def end_previous_assignment
+    #   self.employee.current_assignment.update_attributes(:end_date)
+    # end
 
 end

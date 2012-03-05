@@ -1,16 +1,16 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/controllers/application_controller.rb": [
+      "/Users/Zach/Documents/zba-272/Phase 2/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/helpers/application_helper.rb": [
+      "/Users/Zach/Documents/zba-272/Phase 2/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/assignment.rb": [
+      "/Users/Zach/Documents/zba-272/Phase 2/app/models/assignment.rb": [
         1,
         null,
         null,
@@ -24,18 +24,70 @@
         1,
         null,
         null,
-        1,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         1,
         null,
         null,
         1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        4,
+        null,
+        null,
+        2,
+        null,
+        null,
+        4,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        173,
+        null,
+        70,
+        37,
+        37,
+        null,
+        33,
+        null,
+        null,
+        1,
+        null,
+        225,
+        null,
+        70,
+        37,
+        37,
+        null,
+        33,
         null,
         null,
         null
       ],
-      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/employee.rb": [
+      "/Users/Zach/Documents/zba-272/Phase 2/app/models/employee.rb": [
         1,
         null,
         null,
@@ -118,18 +170,18 @@
         1,
         null,
         1,
-        39,
-        39,
-        39,
+        64,
+        64,
+        64,
         null,
-        39,
-        39,
-        39,
+        64,
+        64,
+        64,
         null,
         null,
         null
       ],
-      "/Users/Zach/Documents/zba-272/Phase Initial 2/app/models/store.rb": [
+      "/Users/Zach/Documents/zba-272/Phase 2/app/models/store.rb": [
         1,
         null,
         null,
@@ -173,14 +225,14 @@
         1,
         null,
         1,
-        13,
-        13,
-        13,
+        38,
+        38,
+        38,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1330888750
+    "timestamp": 1330916376
   }
 }
