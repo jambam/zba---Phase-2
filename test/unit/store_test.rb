@@ -25,6 +25,7 @@ class StoreTest < ActiveSupport::TestCase
   should allow_value("4122683259").for(:phone)
   should allow_value("412-268-3259").for(:phone)
   should allow_value("").for(:phone)
+  should allow_value(nil).for(:phone)
   
   should_not allow_value("412.268.3259").for(:phone)
   should_not allow_value("(412) 268-3259").for(:phone)
@@ -45,13 +46,13 @@ class StoreTest < ActiveSupport::TestCase
   should_not allow_value("3431").for(:zip)
   should_not allow_value("15213-9843").for(:zip)
   should_not allow_value("15d32").for(:zip)
-  should_not allow_value("").for(:zip)
   
   # Validating state...
   should allow_value("PA").for(:state)
   should allow_value("WV").for(:state)
   should allow_value("OH").for(:state)
   should allow_value("").for(:state)
+  should allow_value(nil).for(:state)
 
   should_not allow_value("bad").for(:state)
   should_not allow_value(10).for(:state)

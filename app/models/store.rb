@@ -14,7 +14,7 @@ class Store < ActiveRecord::Base
   validates_presence_of :name, :street, :zip
 
   # phone can have dashes but must be 10 digits 
-  validates_format_of :phone, :with => /^(\d{10}|\d{3}[-]\d{3}[-]\d{4})$/, :message => "should be 10 digits (area code needed) and delimited with dashes only", :allow_blank => true
+  validates_format_of :phone, :with => /^(\d{10}|\d{3}[-]\d{3}[-]\d{4})$/, :message => "should be 10 digits (area code needed) and delimited with dashes only", :allow_blank => true, :allow_nil => true
 
   # if zip included, it must be 5 digits only
   validates_format_of :zip, :with => /^\d{5}$/, :message => "should be five digits long"

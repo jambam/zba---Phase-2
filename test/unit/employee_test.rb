@@ -14,6 +14,8 @@ class EmployeeTest < ActiveSupport::TestCase
   should_not allow_value("1").for(:first_name)
   should_not allow_value("123").for(:first_name)
   should_not allow_value("Zach1").for(:first_name)
+  should_not allow_value("").for(:first_name)
+  should_not allow_value(nil).for(:first_name)
   
 # Validating last_name...
   should allow_value("Zach").for(:last_name)
@@ -23,6 +25,8 @@ class EmployeeTest < ActiveSupport::TestCase
   should_not allow_value("1").for(:last_name)
   should_not allow_value("123").for(:last_name)
   should_not allow_value("Zach1").for(:last_name)
+  should_not allow_value("").for(:last_name)
+  should_not allow_value(nil).for(:last_name)
 
   # Validating phone...
   should allow_value("4122683259").for(:phone)
@@ -51,6 +55,7 @@ class EmployeeTest < ActiveSupport::TestCase
   should_not allow_value("abcdefghij").for(:ssn)
   should_not allow_value("12345678a").for(:ssn)
   should_not allow_value(nil).for(:ssn)
+  should_not allow_value("").for(:ssn)
 
   # Validating date_of_birth
   should allow_value(14.years.ago.to_date).for(:date_of_birth)
@@ -60,6 +65,7 @@ class EmployeeTest < ActiveSupport::TestCase
   should_not allow_value(1.week.from_now).for(:date_of_birth)
   should_not allow_value("bad").for(:date_of_birth)
   should_not allow_value(nil).for(:date_of_birth)
+  should_not allow_value("").for(:date_of_birth)
 
   # Validating role...
   should allow_value("admin").for(:role)
@@ -69,6 +75,7 @@ class EmployeeTest < ActiveSupport::TestCase
   should_not allow_value("bad").for(:role)
   should_not allow_value(10).for(:role)
   should_not allow_value("").for(:role)
+  should_not allow_value(nil).for(:role)
 
  # Testing other methods with a context
   context "Creating three employees" do
@@ -77,6 +84,8 @@ class EmployeeTest < ActiveSupport::TestCase
       @a = Factory.create(:employee, :last_name => "a", :date_of_birth => 16.years.ago.to_date)
       @b = Factory.create(:employee, :last_name => "b", :active => false, :role => "manager")
       @c = Factory.create(:employee, :last_name => "c", :phone => "412-268-8211", :ssn => "123-45 6789", :role => "admin")
+      @a1 = Assignment.create
+      @a2 = Assignment.create(:end_date => nil)
     end
 
   # and provide a teardown method as well
@@ -137,7 +146,32 @@ class EmployeeTest < ActiveSupport::TestCase
     should "show that there is one employee who is an admin" do
       assert_equal 1, Employee.admins.size
       assert_equal ["c"], Employee.admins.map{|x| x.last_name}
+    end
+
+    # test the method 'name' works
+      should "shows that name method works" do
+      assert_equal "a, Ed", @a.name
     end      
+
+    # test the method 'over_18?' works
+      should "shows that over_18? method works" do
+      assert_equal false, @a.over_18?
+      assert_equal true, @b.over_18?
+    end
+
+    # test the method 'age' works
+      should "shows that age method works" do
+      assert_equal 16, @a.age
+      assert_equal 19, @b.age
+    end
+
+    # test the method 'current_assignment' works
+      should "shows that current_assignment method works" do
+      @a1.employee = @a
+      @a2.employee = @b
+      assert_equal nil, @a.current_assignment
+      assert_equal @b.assignments.where(:end_date => nil).first, @b.current_assignment
+    end    
 
   end
 
