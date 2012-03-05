@@ -10,21 +10,21 @@ class AssignmentTest < ActiveSupport::TestCase
 	should validate_presence_of(:store_id)
 	should validate_presence_of(:employee_id)
 
-# # Validating start_date...
-# 	should allow_value(1.second.ago.to_date).for(:start_date)
-# 	should allow_value(1.year.ago.to_date).for(:start_date)
+# Validating start_date...
+	should allow_value(1.second.ago.to_date).for(:start_date)
+	should allow_value(1.year.ago.to_date).for(:start_date)
 
-# 	should_not allow_value(1.day.from_now).for(:start_date)
-# 	should_not allow_value("bad").for(:start_date)
-#   should_not allow_value(nil).for(:start_date)
+	should_not allow_value(1.day.from_now).for(:start_date)
+	should_not allow_value("bad").for(:start_date)
+  should_not allow_value(nil).for(:start_date)
 
-# # Validating end_date...
-# 	should allow_value(1.second.ago.to_date).for(:end_date)
-# 	should allow_value(1.year.ago.to_date).for(:end_date)
-# 	should allow_value(nil).for(:end_date)
+# Validating end_date...
+	should allow_value(1.second.ago.to_date).for(:end_date)
+	should allow_value(1.year.ago.to_date).for(:end_date)
+	should allow_value(nil).for(:end_date)
 
-# 	should_not allow_value(1.day.from_now).for(:end_date)
-# 	should_not allow_value("bad").for(:end_date)
+	should_not allow_value(1.day.from_now).for(:end_date)
+	should_not allow_value("bad").for(:end_date)
 
 # Validating pay_level...
 	should allow_value(1).for(:pay_level)

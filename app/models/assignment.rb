@@ -13,11 +13,11 @@ class Assignment < ActiveRecord::Base
   #ensures there's data for store_id and employee_id
   validates_presence_of :store_id, :employee_id  
 
-  # # start_date can't be in the future nor can it be after end_date
-  # validates_date :start_date, :on_or_before => lambda {|a| Date.current}, :on_or_before => :end_date #, :message => "hello there mate"
+  # start_date can't be in the future nor can it be after end_date
+  validates_date :start_date, :on_or_before => :end_date #, :message => "hello there mate"
 
-  # # end_date can't be in the future and can't be after end_date
-  # validates_date :end_date, :on_or_before => lambda {|a| Date.current}, :after => :start_date, :allow_nil => true
+  # end_date can't be in the future and can't be after end_date
+  validates_date :end_date, :on_or_before => lambda {Date.current}, :allow_nil => true
 
   # pay_level is an int and between 1 and 6
   validates_numericality_of :pay_level, :only_integer => true, :greater_than => 0, :less_than => 7
